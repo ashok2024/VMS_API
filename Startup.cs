@@ -1,4 +1,9 @@
-﻿namespace VMS_API
+﻿using Microsoft.EntityFrameworkCore;
+using VMS_API.Interfaces;
+using VMS_API.Models;
+using VMS_API.Services;
+
+namespace VMS_API
 {
     public class Startup
     {
@@ -10,6 +15,10 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<VMSDBContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Defaht]"));
+            });
             services.AddCors(options =>
             {
                 options.AddPolicy("ServiceAPIPolicy", builder =>
@@ -18,6 +27,9 @@
                 });
             });
 
+
+            
+            services.AddTransient<IDashboard, DashboardService>();
             services.AddControllers();
             services.AddEndpointsApiExplorer(); 
             services.AddSwaggerGen();
