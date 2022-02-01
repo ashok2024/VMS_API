@@ -17,7 +17,7 @@ namespace VMS_API
         {
             services.AddDbContext<VMSDBContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Defaht]"));
+                options.UseSqlServer("Server=ASHOK;initial catalog=VMSDB;Trusted_Connection=True;");
             });
             services.AddCors(options =>
             {
@@ -30,6 +30,7 @@ namespace VMS_API
 
             
             services.AddTransient<IDashboard, DashboardService>();
+            services.AddTransient<IMaster, MasterServices>();
             services.AddControllers();
             services.AddEndpointsApiExplorer(); 
             services.AddSwaggerGen();
