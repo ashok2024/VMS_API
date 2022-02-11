@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VMS.Models.Employee;
 using VMS_API.Interfaces;
 using VMS_API.Models;
 using VMS_API.Models.ViewModels;
@@ -152,6 +153,201 @@ namespace VMS_API.Controllers
             {
                 responseModal.Data = _master.GetBranchById(BranchId);
                 responseModal.Message = "branch details get successfully";
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+        [HttpGet("GetDepartment")]
+        public ResponseModal GetDepartment()
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.GetDepartment();
+                responseModal.Message = "department details get successfully";
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+        [HttpGet("GetDepartmentById")]
+        public ResponseModal GetDepartmentById(int DepartmentId)
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.GetDepartmentbyId(DepartmentId);
+                responseModal.Message = "department details get successfully";
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+        [HttpPost("SaveDepartment")]
+        public ResponseModal SaveDepartment([FromBody] DepartmentTb departmentTb)
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.SaveDepartment(departmentTb);
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+
+        [HttpPut("EditDepartment")]
+        public ResponseModal EditDepartment([FromBody] DepartmentTb departmentTb)
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.EditDepartment(departmentTb);
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+        [HttpGet("GetEmployyee")]
+        public ResponseModal GetEmployee()
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.GetEmployee();
+                responseModal.Message = "employee details get successfully";
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+        [HttpGet("GetEmployeeById")]
+        public ResponseModal GetEmployeeById(int EmployeeId)
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.GetDepartmentbyId(EmployeeId);
+                responseModal.Message = "employee details get successfully";
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+        [HttpPost("SaveEmployee")]
+        public ResponseModal SaveEmployee([FromBody] AddEmployeeModel emp)
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.SaveEmployee(emp);
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+
+        [HttpPut("EditEmployee")]
+        public ResponseModal EditEmployee([FromBody] AddEmployeeModel emp)
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.EditEmployee(emp);
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+        [HttpGet("GetUserType")]
+        public ResponseModal GetUserType()
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.GetUserType();
+                responseModal.Message = "user type get successfully";
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+
+        [HttpPost("UploadEmployee")]
+        public ResponseModal UploadEmployee([FromBody] string emp , string dev)
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.UploadEmployee(emp , dev);
+                responseModal.status = true;
+                return responseModal;
+            }
+            catch (Exception ex)
+            {
+                responseModal.Message = ex.ToString();
+                responseModal.status = false;
+                return responseModal;
+            }
+        }
+        [HttpPost("DeleteEmployee")]
+        public ResponseModal DeleteEmployee([FromBody] string emp, string dev)
+        {
+            ResponseModal responseModal = new ResponseModal();
+            try
+            {
+                responseModal.Data = _master.DeleteEmployee(emp, dev);
                 responseModal.status = true;
                 return responseModal;
             }

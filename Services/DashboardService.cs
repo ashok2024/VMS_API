@@ -1,11 +1,12 @@
-﻿using VMS_API.Interfaces;
+﻿using VMS.Models.Employee;
+using VMS_API.Interfaces;
 using VMS_API.Models;
 using VMS_API.Models.ViewModels;
 
 namespace VMS_API.Services
 {
-   
-    public class DashboardService:IDashboard
+
+    public class DashboardService : IDashboard
     {
         private readonly VMSDBContext _context;
         public DashboardService(VMSDBContext context)
@@ -30,8 +31,8 @@ namespace VMS_API.Services
 
                 throw;
             }
-            
+
         }
-    }
+    }        
 
 }

@@ -31,6 +31,11 @@ namespace VMS_API
             
             services.AddTransient<IDashboard, DashboardService>();
             services.AddTransient<IMaster, MasterServices>();
+            services.AddTransient<IVisitor, VisitorService>();
+            services.AddTransient<ICourier, CourierService>();
+            services.AddTransient<IAdmin, AdminService>();
+            services.AddTransient<IEmployee, EmployeeService>();
+            services.AddTransient<IReceptioncs, ReceptionService>();
             services.AddControllers();
             services.AddEndpointsApiExplorer(); 
             services.AddSwaggerGen();

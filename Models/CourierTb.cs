@@ -15,5 +15,8 @@ namespace VMS_API.Models
         public int? UserId { get; set; }
         public string? Description { get; set; }
         public int? EmployeeId { get; set; }
+
+        public string? PhotoPath { get; set; }
+        public string? CertifactePath { get; set; }
     }
 }

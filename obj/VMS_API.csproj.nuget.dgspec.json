@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\WorkArea\\Dev-2022\\VMS_API\\VMS_API.csproj": {}
+    "C:\\WorkArea\\VMS_API\\VMS_API.csproj": {}
   },
   "projects": {
-    "E:\\WorkArea\\Dev-2022\\VMS_API\\VMS_API.csproj": {
+    "C:\\WorkArea\\VMS_API\\VMS_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\WorkArea\\Dev-2022\\VMS_API\\VMS_API.csproj",
+        "projectUniqueName": "C:\\WorkArea\\VMS_API\\VMS_API.csproj",
         "projectName": "VMS_API",
-        "projectPath": "E:\\WorkArea\\Dev-2022\\VMS_API\\VMS_API.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "E:\\WorkArea\\Dev-2022\\VMS_API\\obj\\",
+        "projectPath": "C:\\WorkArea\\VMS_API\\VMS_API.csproj",
+        "packagesPath": "C:\\Users\\ashok\\.nuget\\packages\\",
+        "outputPath": "C:\\WorkArea\\VMS_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ashok\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Community.Core.EnterpriseLibrary": {
+              "target": "Package",
+              "version": "[2.21.8.1, )"
+            },
+            "Grpc.Core": {
+              "target": "Package",
+              "version": "[2.43.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.1, )"
@@ -59,6 +67,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Microsoft.Net.Http.Headers": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
